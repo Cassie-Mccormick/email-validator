@@ -2,25 +2,13 @@ package com.email.email_validator;
 
 public class email_validator {
 	public boolean email_validator(String email) {
-		boolean validation = true;
-		int count = 0;
-		for (int i = 0; i < email.length(); i++) {
-			if (email.charAt(i) == '@'); {
-				count++;
-			}
+		//if the email matches any of these criteria, it will return true
+		if (email.matches("[^@]*@[^@]*") && email.matches(".*[.].*") && email.matches(".*[.]+((com)|(ca))") && email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+			return true;
 		}
-		if (count != 1) {
-			validation = false;
+		//false if not true
+		else {
+			return false;
 		}
-		if (!email.contains(".")) {
-			validation = false;
-		}
-		if (email.length() < 10) {
-			validation = false;
-		}
-		if (!email.contains("gmail") || !email.contains("yahoo") || !email.contains("dal") || !email.contains("hotmail")) {
-			validation = false;
-		}
-		return validation;
-	}
-}
+	}//end of boolean
+}//end of class
