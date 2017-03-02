@@ -15,7 +15,7 @@ public class email_validator {
 		if (!email.contains(".")) {
 			validation = false;
 		}
-		if (email.length() < 5) {
+		if (email.length() < 10) {
 			validation = false;
 		}
 		if (!email.contains("gmail") || !email.contains("yahoo") || !email.contains("dal") || !email.contains("hotmail")) {
